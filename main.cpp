@@ -164,7 +164,7 @@ public:
         perimeter+=vertices[i].distance_to_point(vertices[i+1]);
     }
 
-    return perimeter;
+    return perimeter + vertices[vertices.size() -1].distance_to_point(vertices[0]);
     
   }
 };
