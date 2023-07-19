@@ -3,6 +3,8 @@
 #include <vector>
 #include <array>
 #include "point.hpp"
+#include "triangle.hpp"
+
 
 
 int main()
@@ -97,7 +99,7 @@ double getY(){
 }
 
 };*/
-
+/*
 class Line{
 
   public:
@@ -123,9 +125,9 @@ class Line{
     return distance;
   }
 
-};
+};*/
 
-
+/*
 class Triangle{
   public:
   Point p1 = Point(0,0);
@@ -147,8 +149,8 @@ class Triangle{
     return (0.5 * a * b * sin(c));
   }
 
-};
-
+};*/
+/*
 class Polygon {
 public:
   std::vector<Point> vertices;
@@ -179,7 +181,7 @@ public:
     return perimeter + vertices[vertices.size() -1].distance_to_point(vertices[0]);
     
   }
-};
+};*/
 
 class AUV{
 public:
@@ -209,8 +211,8 @@ void step(double dt)
 {
   double x = position.x();
   double y = position.y();
-  position.setx(x += speed[0]*dt); 
-  position.sety(y += speed[1] * dt);
+  position.setx(x + speed[0]*dt); 
+  position.sety(y + speed[1] * dt);
   depth += speed[2] * dt;      
 }
 
@@ -222,6 +224,7 @@ void apply_acceleration(const std::array<double, 3> acceleration, double dt) {
 
 void apply_angular_acceleration(double angular_acceleration, double dt) {
     angular_speed += angular_acceleration * dt;
+    heading += angular_speed * dt;
   }
 
 };
