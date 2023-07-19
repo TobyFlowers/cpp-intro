@@ -1,7 +1,6 @@
 #pragma once
 #include <cmath>
 #include <iostream>
-#include <cmath>
 #include <vector>
 #include <array>
 #include "point.hpp"
