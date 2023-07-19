@@ -2,8 +2,7 @@
 #include <cmath>
 #include <vector>
 #include <array>
-#include "point.hpp"
-#include "triangle.hpp"
+#include "auv.hpp"
 
 
 

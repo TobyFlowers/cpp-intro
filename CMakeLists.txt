@@ -8,4 +8,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(MyFirstExecutable 
 main.cpp
-point.cpp)
+point.cpp
+auv.cpp polygon.cpp triangle.cpp)
