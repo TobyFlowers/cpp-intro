@@ -2,6 +2,8 @@
 #include <cmath>
 #include <vector>
 #include <array>
+#include "point.hpp"
+
 
 int main()
 {
@@ -55,7 +57,7 @@ public:
     return M_PI * pow(radius, 2);
   }
 };
-
+/*
 class Point{
 
   public:
@@ -85,7 +87,16 @@ class Point{
     return distance;
 }
 
-};
+double getX()
+{
+  return x;
+}
+
+double getY(){
+  return y;
+}
+
+};*/
 
 class Line{
 
@@ -99,16 +110,16 @@ class Line{
 
   double length()
   {
-    return sqrt(pow((p2.x-p1.x),2) + pow((p2.y-p1.y),2));
+    return sqrt(pow((p2.x()-p1.x()),2) + pow((p2.y()-p1.y()),2));
   }
 
 
   double distance_to_point(Point p) {
-    double dy = p2.y - p1.y;
-    double dx = p2.x - p1.x;
-    double c = dy * p1.x + dx * p1.y;
+    double dy = p2.y() - p1.y();
+    double dx = p2.x() - p1.x();
+    double c = dy * p1.x() + dx * p1.y();
 
-    double distance = abs(dy * p.x + dx * p.y - c) / sqrt(dy * dy + dx * dx);
+    double distance = abs(dy * p.x() + dx * p.y() - c) / sqrt(dy * dy + dx * dx);
     return distance;
   }
 
@@ -196,8 +207,10 @@ double angular_speed){
 
 void step(double dt)
 {
-  position.x += speed[0] * dt;  
-  position.y += speed[1] * dt;  
+  double x = position.x();
+  double y = position.y();
+  position.setx(x += speed[0]*dt); 
+  position.sety(y += speed[1] * dt);
   depth += speed[2] * dt;      
 }
 
